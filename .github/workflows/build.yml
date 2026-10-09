@@ -19,12 +19,14 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      # यह स्टेप अपने आप missing Wrapper JAR बना देगा
-      - name: Generate Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.8
-
+      # Explicitly setup Gradle 8.10 (fixes Loom crash with Gradle 9+)
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.10'
+
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.10
 
       - name: Make gradlew executable
         run: chmod +x gradlew
