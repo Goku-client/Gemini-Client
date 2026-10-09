@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "gokumod",
+  "version": "${version}",
+  "name": "Goku Utility Mod",
+  "description": "Custom utility mod with ESP, Aimbot, and custom blue particle GUI.",
+  "authors": ["Goku"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.goku.cheatmod.GokuClient"
+    ],
+    "main": [
+      "com.goku.cheatmod.GokuMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.21",
+    "java": ">=21"
+  }
+}
